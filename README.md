@@ -50,3 +50,6 @@
 
 14. test_get_list_of_favorites_books_multiple_books
     Проверяет корректность получения списка избранных книг (несколько книг).
+
+15. test_get_books_genre_returns_all_added_books 
+    Проверяет, что метод возвращает все добавленные книги с их текущими жанрами.

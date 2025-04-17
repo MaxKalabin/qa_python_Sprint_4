@@ -138,3 +138,19 @@ class TestBooksCollector:
         collector.add_book_in_favorites('Дюна')
         collector.add_book_in_favorites('Хоббит')
         assert collector.get_list_of_favorites_books() == ['Дюна', 'Хоббит']
+
+    def test_get_books_genre_returns_all_added_books(self):
+        collector = BooksCollector()
+
+        collector.add_new_book('Мгла')
+        collector.add_new_book('Хоббит')
+        collector.set_book_genre('Мгла', 'Ужасы')
+        collector.set_book_genre('Хоббит', 'Фантастика')
+
+
+        expected = {
+            'Мгла': 'Ужасы',
+            'Хоббит': 'Фантастика'
+        }
+
+        assert collector.get_books_genre() == expected
